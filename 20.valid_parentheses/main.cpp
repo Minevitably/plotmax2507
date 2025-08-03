@@ -39,34 +39,23 @@ public:
             return false;
         }
 
-        vector<bool> visited(length, false);
-
-        for (int i = 0; i < length; i++) {
-            // 从左往右找到第一个闭括号
-            if (visited[i] || isOpenBracket(s[i])) {
-                continue;
-            }
-            // 从右往左找到第一个开括号
-            for (int j = i - 1; j >= 0; j--) {
-                // 配对
-                if (!visited[j] && isOpenBracket(s[j])) {
-                    if (isPair(s[j], s[i])) {
-                        visited[i] = true;
-                        visited[j] = true;
-                        break;
-                    } else {
-                        return false;
-                    }
+        vector<char> stack;
+        for (const auto &item: s) {
+            if (isOpenBracket(item)) {
+                stack.push_back(item);
+            } else if (isCloseBracket(item)) {
+                if (stack.empty()) {
+                    return false;
                 }
+                const char &ch = stack.back();
+                if (!isPair(ch, item)) {
+                    return false;
+                }
+                stack.pop_back();
             }
         }
 
-        // 可能出现全部遍历完但是没有一个闭括号的情况，所以需要检测下是否都为true
-        bool allVisited = std::all_of(visited.begin(), visited.end(),
-                                      [](bool v) { return v; });
-
-        return allVisited;
-
+        return stack.empty();
     }
 };
 
