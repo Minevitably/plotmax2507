@@ -9,5 +9,6 @@ add_subdirectory(${PROJECT_SOURCE_DIR}/14.longest_common_prefix)
 add_subdirectory(${PROJECT_SOURCE_DIR}/20.valid_parentheses)
 add_subdirectory(${PROJECT_SOURCE_DIR}/21.merge_two_sorted_lists)
 add_subdirectory(${PROJECT_SOURCE_DIR}/26.remove_duplicates_from_sorted_array)
+add_subdirectory(${PROJECT_SOURCE_DIR}/27.remove_element)
 
 #add_executable(plotmax2507 main.cpp)
