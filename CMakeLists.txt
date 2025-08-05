@@ -11,5 +11,6 @@ add_subdirectory(${PROJECT_SOURCE_DIR}/21.merge_two_sorted_lists)
 add_subdirectory(${PROJECT_SOURCE_DIR}/26.remove_duplicates_from_sorted_array)
 add_subdirectory(${PROJECT_SOURCE_DIR}/27.remove_element)
 add_subdirectory(${PROJECT_SOURCE_DIR}/28.find_the_index_of_the_first_occurrence_in_a_string)
+add_subdirectory(${PROJECT_SOURCE_DIR}/35._search_insert_position)
 
 #add_executable(plotmax2507 main.cpp)
