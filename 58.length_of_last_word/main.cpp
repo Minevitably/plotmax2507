@@ -1,12 +1,17 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <iostream>
+#include <sstream>
+#include <vector>
+#include <string>
+
 
 using namespace std;
 
 class Solution {
 private:
-    string trim(string s) {
+    string trim(const std::string& s) {
         int i = 0;
         while (i < s.size() && s[i] == ' ') {
             i++;
@@ -26,35 +31,16 @@ private:
 
         return s.substr(i, j - i + 1);
     }
-    vector<string> split(string s, char delimiter) {
-        s = trim(s);
-        vector<string> strs;
-        // delete same delimiter
-        string str;
-        for (int i = 0; i < s.size(); i++) {
-            if (s[i] != delimiter) {
-                str.push_back(s[i]);
-            } else if (str.back() != delimiter) {
-                str.push_back(s[i]);
-            } else {
-                continue;
-            }
-        }
 
-        // split
-        for (int i = 0; i < str.size(); i++) {
-            if (str[i] != delimiter) {
-                int j;
-                for (j = i; j < str.size(); j++) {
-                    if (str[j] == delimiter) {
-                        break;
-                    }
-                }
-                strs.push_back(str.substr(i, j - i));
-                i = j;
-            }
+    std::vector<std::string> split(const std::string& s, char delimiter) {
+        string s1 = trim(s);
+        std::vector<std::string> tokens;
+        std::string token;
+        std::istringstream tokenStream(s1);
+        while (std::getline(tokenStream, token, delimiter)) {
+            tokens.push_back(token);
         }
-        return strs;
+        return tokens;
     }
 public:
     int lengthOfLastWord(string s) {
