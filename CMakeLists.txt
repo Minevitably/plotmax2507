@@ -13,5 +13,6 @@ add_subdirectory(${PROJECT_SOURCE_DIR}/27.remove_element)
 add_subdirectory(${PROJECT_SOURCE_DIR}/28.find_the_index_of_the_first_occurrence_in_a_string)
 add_subdirectory(${PROJECT_SOURCE_DIR}/35._search_insert_position)
 add_subdirectory(${PROJECT_SOURCE_DIR}/58.length_of_last_word)
+add_subdirectory(${PROJECT_SOURCE_DIR}/66.plus_one)
 
 #add_executable(plotmax2507 main.cpp)
