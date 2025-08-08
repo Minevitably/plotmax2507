@@ -12,22 +12,37 @@ using namespace std;
 class Solution {
 public:
     int mySqrt(int x) {
-        if (x == 0) {
-            return 0;
+        if (x == 0 || x == 1) {
+            return x;
         }
-        for (int i = 1; i <= x; i++) {
-            if (x / i < i) {
-                return i - 1;
+        int i = 0;
+        int j = x - 1;
+        int mid;
+        while (i < j) {
+            mid = (i + j) / 2;
+            // stack overflow
+            // x / mid = val, mid != 0
+            int val = 0;
+            if (mid == 0) {
+                // ensure mid*mid < x
+                val = mid + 1;
+            } else {
+                val = x / mid;
             }
-            if (x / i == i) {
-                return i;
+            if (val < mid) { // mid*mid > x, x/mid < mid, val < mid
+                j = mid - 1;
+            } else if (val > mid) { // mid*mid < x, x/mid > mid, val > mid
+                i = mid + 1;
+            } else {
+                return mid;
             }
         }
-        return -1;
+        return i;
     }
 };
 
 int main() {
     std::cout << "Hello, World!" << std::endl;
+    (new Solution())->mySqrt(3);
     return 0;
 }
