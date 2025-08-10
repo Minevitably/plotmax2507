@@ -33,18 +33,18 @@ public:
             return head;
         }
         ListNode* curr = head;
-        ListNode* result = new ListNode(head->val);
-        ListNode* last = result;
+        ListNode* last = head;
         while (curr) {
             // if last element of result list not equal to current val
             // then append current val to result list
             if (last->val != curr->val) {
-                last->next = new ListNode(curr->val);
-                last = last->next;
+                last->next = curr;
+                last = curr;
             }
             curr = curr->next;
         }
-        return result;
+        last->next = nullptr;
+        return head;
     }
 };
 
