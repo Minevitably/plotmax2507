@@ -18,5 +18,6 @@ add_subdirectory(${PROJECT_SOURCE_DIR}/67.add_binary)
 add_subdirectory(${PROJECT_SOURCE_DIR}/69.sqrt_x)
 add_subdirectory(${PROJECT_SOURCE_DIR}/70.climbing_stairs)
 add_subdirectory(${PROJECT_SOURCE_DIR}/83.remove_duplicates_from_sorted_list)
+add_subdirectory(${PROJECT_SOURCE_DIR}/88.merge_sorted_array)
 
 #add_executable(plotmax2507 main.cpp)
