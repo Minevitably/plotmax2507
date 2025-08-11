@@ -9,6 +9,7 @@
 
 using namespace std;
 
+
 class Solution {
 public:
     int mySqrt(int x) {
@@ -16,28 +17,27 @@ public:
             return x;
         }
         int i = 0;
-        int j = x - 1;
+        int j = x;
         int mid;
-        while (i < j) {
+        while (i <= j) {
             mid = (i + j) / 2;
             // stack overflow
             // x / mid = val, mid != 0
-            int val = 0;
-            if (mid == 0) {
-                // ensure mid*mid < x
-                val = mid + 1;
-            } else {
-                val = x / mid;
-            }
+            int val = x / mid;
+            // if mid^2 < x && x < (mid + 1)^2, then mid is the res
+
             if (val < mid) { // mid*mid > x, x/mid < mid, val < mid
                 j = mid - 1;
             } else if (val > mid) { // mid*mid < x, x/mid > mid, val > mid
+                if (x / (mid + 1) < mid + 1) {
+                    return mid;
+                }
                 i = mid + 1;
             } else {
                 return mid;
             }
         }
-        return i;
+        return -1;
     }
 };
 
