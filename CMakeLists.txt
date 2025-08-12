@@ -21,5 +21,6 @@ add_subdirectory(${PROJECT_SOURCE_DIR}/83.remove_duplicates_from_sorted_list)
 add_subdirectory(${PROJECT_SOURCE_DIR}/88.merge_sorted_array)
 add_subdirectory(${PROJECT_SOURCE_DIR}/94.binary_tree_inorder_traversal)
 add_subdirectory(${PROJECT_SOURCE_DIR}/100.same_tree)
+add_subdirectory(${PROJECT_SOURCE_DIR}/101.symmetric_tree)
 
 #add_executable(plotmax2507 main.cpp)
