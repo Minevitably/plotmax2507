@@ -26,5 +26,6 @@ add_subdirectory(${PROJECT_SOURCE_DIR}/104.maximum_depth_of_binary_tree)
 add_subdirectory(${PROJECT_SOURCE_DIR}/108.convert_sorted_array_to_binary_search_tree)
 add_subdirectory(${PROJECT_SOURCE_DIR}/110.balanced_binary_tree)
 add_subdirectory(${PROJECT_SOURCE_DIR}/111.minimum_depth_of_binary_tree)
+add_subdirectory(${PROJECT_SOURCE_DIR}/112.path_sum)
 
 #add_executable(plotmax2507 main.cpp)
