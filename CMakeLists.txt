@@ -28,5 +28,6 @@ add_subdirectory(${PROJECT_SOURCE_DIR}/110.balanced_binary_tree)
 add_subdirectory(${PROJECT_SOURCE_DIR}/111.minimum_depth_of_binary_tree)
 add_subdirectory(${PROJECT_SOURCE_DIR}/112.path_sum)
 add_subdirectory(${PROJECT_SOURCE_DIR}/118.pascals_triangle)
+add_subdirectory(${PROJECT_SOURCE_DIR}/119.pascals_triangleII)
 
 #add_executable(plotmax2507 main.cpp)
