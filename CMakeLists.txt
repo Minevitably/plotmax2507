@@ -30,5 +30,6 @@ add_subdirectory(${PROJECT_SOURCE_DIR}/112.path_sum)
 add_subdirectory(${PROJECT_SOURCE_DIR}/118.pascals_triangle)
 add_subdirectory(${PROJECT_SOURCE_DIR}/119.pascals_triangleII)
 add_subdirectory(${PROJECT_SOURCE_DIR}/121.best_time_to_buy_and_sell_stock)
+add_subdirectory(${PROJECT_SOURCE_DIR}/125.valid_palindrome)
 
 #add_executable(plotmax2507 main.cpp)
