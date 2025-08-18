@@ -32,5 +32,6 @@ add_subdirectory(${PROJECT_SOURCE_DIR}/119.pascals_triangleII)
 add_subdirectory(${PROJECT_SOURCE_DIR}/121.best_time_to_buy_and_sell_stock)
 add_subdirectory(${PROJECT_SOURCE_DIR}/125.valid_palindrome)
 add_subdirectory(${PROJECT_SOURCE_DIR}/136.single_number)
+add_subdirectory(${PROJECT_SOURCE_DIR}/141.linked_list_cycle)
 
 #add_executable(plotmax2507 main.cpp)
