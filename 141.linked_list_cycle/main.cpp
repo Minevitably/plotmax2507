@@ -22,13 +22,13 @@ private:
         // reverse linked list
         while (curr != nullptr) {
             // return nullptr if there is a cycle
-            if (curr->next == head) {
-                return nullptr;
-            }
             ListNode *next = curr->next;
             curr->next = prev;
             prev = curr;
             curr = next;
+            if (curr == head) {
+                return nullptr;
+            }
         }
         head = prev;
         return head;
