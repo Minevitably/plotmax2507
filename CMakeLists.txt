@@ -36,5 +36,7 @@ add_subdirectory(${PROJECT_SOURCE_DIR}/141.linked_list_cycle)
 add_subdirectory(${PROJECT_SOURCE_DIR}/144.binary_tree_preorder_traversal)
 add_subdirectory(${PROJECT_SOURCE_DIR}/145.binary_tree_postorder_traversal)
 add_subdirectory(${PROJECT_SOURCE_DIR}/160.intersection_of_two_linked_lists)
+add_subdirectory(${PROJECT_SOURCE_DIR}/169.majority_element)
+add_subdirectory(${PROJECT_SOURCE_DIR}/171.excel_sheet_column_number)
 
 #add_executable(plotmax2507 main.cpp)
