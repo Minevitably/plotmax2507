@@ -14,14 +14,22 @@ public:
             return INT_MIN;
         }
         int val = nums[0];
-        int count = 1;
+        int eqCount = 0;
+        int neqCount = 0;
         for (auto v: nums) {
             if (v == val) {
-                count++;
+                eqCount++;
+            } else {
+                neqCount++;
+            }
+            if (neqCount > eqCount) {
+                val = v;
+                neqCount--;
+                eqCount++;
             }
         }
 
-        return INT_MIN;
+        return val;
     }
 };
 
