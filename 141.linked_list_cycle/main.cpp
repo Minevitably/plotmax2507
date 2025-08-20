@@ -19,15 +19,11 @@ private:
     ListNode *reverse(ListNode *head) {
         ListNode *curr = head;
         ListNode *prev = nullptr;
-        int headCount = 0;
         // reverse linked list
         while (curr != nullptr) {
             // return nullptr if there is a cycle
-            if (curr == head) {
-                headCount++;
-                if (headCount == 2) {
-                    return nullptr;
-                }
+            if (curr->next == head) {
+                return nullptr;
             }
             ListNode *next = curr->next;
             curr->next = prev;
