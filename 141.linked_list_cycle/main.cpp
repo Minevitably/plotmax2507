@@ -14,28 +14,37 @@ struct ListNode {
 };
 
 class Solution {
+
+private:
+    ListNode *reverse(ListNode *head) {
+        ListNode *curr = head;
+        ListNode *prev = nullptr;
+        int headCount = 0;
+        // reverse linked list
+        while (curr != nullptr) {
+            // return nullptr if there is a cycle
+            if (curr == head) {
+                headCount++;
+                if (headCount == 2) {
+                    return nullptr;
+                }
+            }
+            ListNode *next = curr->next;
+            curr->next = prev;
+            prev = curr;
+            curr = next;
+        }
+        head = prev;
+        return head;
+    }
+
 public:
     bool hasCycle(ListNode *head) {
         if (head == nullptr) {
             return false;
         }
-        ListNode *curr = head;
-        while (curr != nullptr) {
-            ListNode *tempCurr = head;
-            // check curr whether in [head,curr)
-            while (tempCurr != curr) {
-                if (curr->next == tempCurr) {
-                    return true;
-                }
-                tempCurr = tempCurr->next;
-            }
-            // boundary situation, check curr
-            // [head, curr]
-            if (tempCurr == curr && curr->next == tempCurr) {
-                return true;
-            }
-
-            curr = curr->next;
+        if (reverse(head) == nullptr) {
+            return true;
         }
         return false;
     }
