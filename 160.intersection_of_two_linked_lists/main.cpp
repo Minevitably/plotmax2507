@@ -16,39 +16,38 @@ struct ListNode {
 class Solution {
 public:
     ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
+        if (headA == nullptr || headB == nullptr) {
+            return nullptr;
+        }
         ListNode *nodeA = headA;
-        vector<ListNode *> vectorA;
         ListNode *nodeB = headB;
-        vector<ListNode *> vectorB;
-
-        while (nodeA != nullptr) {
-            vectorA.push_back(nodeA);
+        int listALength = 0;
+        int listBLength = 0;
+        while (nodeA->next != nullptr) {
+            listALength++;
             nodeA = nodeA->next;
         }
-        while (nodeB != nullptr) {
-            vectorB.push_back(nodeB);
+        while (nodeB->next != nullptr) {
+            listBLength++;
             nodeB = nodeB->next;
         }
 
-        int i = 0;
-        if (vectorA.back() == vectorB.back()) {
-            // tail node is same
-            nodeA = vectorA[vectorA.size() - i - 1];
-            nodeB = vectorB[vectorB.size() - i - 1];
-            // find intersect node
-            while (nodeA == nodeB) {
-                i++;
-                // boundary situation
-                if (i >= vectorA.size()) {
-                    return headA;
-                }
-                if (i >= vectorB.size()) {
-                    return headB;
-                }
-                nodeA = vectorA[vectorA.size() - i - 1];
-                nodeB = vectorB[vectorB.size() - i - 1];
+        if (nodeA == nodeB) {
+            if (listALength > listBLength) {
+                nodeA = headA;
+                nodeB = headB;
+            } else {
+                nodeA = headB;
+                nodeB = headA;
             }
-            return vectorA[vectorA.size() - i];
+            for (int i = 0; i < abs(listALength - listBLength); i++) {
+                nodeA = nodeA->next;
+            }
+            while (nodeA != nodeB) {
+                nodeA = nodeA->next;
+                nodeB = nodeB->next;
+            }
+            return nodeA;
         }
         return nullptr;
     }
