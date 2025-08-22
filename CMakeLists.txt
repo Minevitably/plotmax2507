@@ -40,5 +40,6 @@ add_subdirectory(${PROJECT_SOURCE_DIR}/169.majority_element)
 add_subdirectory(${PROJECT_SOURCE_DIR}/171.excel_sheet_column_number)
 add_subdirectory(${PROJECT_SOURCE_DIR}/175.combine_two_tables)
 add_subdirectory(${PROJECT_SOURCE_DIR}/181.employees_earning_more_than_their_managers)
+add_subdirectory(${PROJECT_SOURCE_DIR}/182.duplicate_emails)
 
 #add_executable(plotmax2507 main.cpp)
