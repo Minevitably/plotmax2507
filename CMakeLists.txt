@@ -43,5 +43,6 @@ add_subdirectory(${PROJECT_SOURCE_DIR}/181.employees_earning_more_than_their_man
 add_subdirectory(${PROJECT_SOURCE_DIR}/182.duplicate_emails)
 add_subdirectory(${PROJECT_SOURCE_DIR}/183.customers_who_never_order)
 add_subdirectory(${PROJECT_SOURCE_DIR}/190.reverse_bits)
+add_subdirectory(${PROJECT_SOURCE_DIR}/191.number_of_1_bits)
 
 #add_executable(plotmax2507 main.cpp)
