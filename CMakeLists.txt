@@ -48,5 +48,6 @@ add_subdirectory(${PROJECT_SOURCE_DIR}/191.number_of_1_bits)
 add_subdirectory(${PROJECT_SOURCE_DIR}/193.valid_phone_numbers)
 add_subdirectory(${PROJECT_SOURCE_DIR}/195.tenth_line)
 add_subdirectory(${PROJECT_SOURCE_DIR}/202.happy_number)
+add_subdirectory(${PROJECT_SOURCE_DIR}/203.remove_linked_list_elements)
 
 #add_executable(plotmax2507 main.cpp)
