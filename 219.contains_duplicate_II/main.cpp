@@ -13,13 +13,12 @@ public:
         map<int, int> existMap;
         for (int i = 0; i < nums.size(); i++) {
             int key = nums[i];
-            if (existMap.count(key) == 0) {
-                existMap[key] = i;
-            } else if (abs(existMap[key] - i) <= k) {
-                return true;
-            } else {
-                existMap[key] = i;
+            if (existMap.count(key) > 0) {
+                if (abs(existMap[key] - i) <= k) {
+                    return true;
+                }
             }
+            existMap[key] = i;
         }
         return false;
     }
