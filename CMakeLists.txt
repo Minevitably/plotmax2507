@@ -53,5 +53,6 @@ add_subdirectory(${PROJECT_SOURCE_DIR}/205.isomorphic_strings)
 add_subdirectory(${PROJECT_SOURCE_DIR}/206.reverse_linked_list)
 add_subdirectory(${PROJECT_SOURCE_DIR}/217.contains_duplicate)
 add_subdirectory(${PROJECT_SOURCE_DIR}/219.contains_duplicate_II)
+add_subdirectory(${PROJECT_SOURCE_DIR}/222.count_complete_tree_nodes)
 
 #add_executable(plotmax2507 main.cpp)
