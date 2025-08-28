@@ -55,5 +55,6 @@ add_subdirectory(${PROJECT_SOURCE_DIR}/217.contains_duplicate)
 add_subdirectory(${PROJECT_SOURCE_DIR}/219.contains_duplicate_II)
 add_subdirectory(${PROJECT_SOURCE_DIR}/222.count_complete_tree_nodes)
 add_subdirectory(${PROJECT_SOURCE_DIR}/225.implement_stack_using_queues)
+add_subdirectory(${PROJECT_SOURCE_DIR}/226.invert_binary_tree)
 
 #add_executable(plotmax2507 main.cpp)
