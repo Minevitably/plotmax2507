@@ -64,7 +64,6 @@ public:
  */
 
 int main() {
-    (new Solution())->isPowerOfTwo(-16);
     std::cout << "Hello, World!" << std::endl;
     return 0;
 }
