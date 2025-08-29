@@ -58,5 +58,6 @@ add_subdirectory(${PROJECT_SOURCE_DIR}/225.implement_stack_using_queues)
 add_subdirectory(${PROJECT_SOURCE_DIR}/226.invert_binary_tree)
 add_subdirectory(${PROJECT_SOURCE_DIR}/228.summary_ranges)
 add_subdirectory(${PROJECT_SOURCE_DIR}/231.power_of_two)
+add_subdirectory(${PROJECT_SOURCE_DIR}/232.implement_queue_using_stacks)
 
 #add_executable(plotmax2507 main.cpp)
