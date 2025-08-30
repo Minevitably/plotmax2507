@@ -21,36 +21,34 @@ public:
     }
 
     int pop() {
-        int size = stack1.size();
-        for (int i = 0; i < size - 1; i++) {
-            stack2.push(stack1.top());
-            stack1.pop();
+        if (stack2.empty()) {
+            int size = stack1.size();
+            for (int i = 0; i < size; i++) {
+                stack2.push(stack1.top());
+                stack1.pop();
+            }
         }
-        int v = stack1.top();
-        stack1.pop();
-        for (int i = 0; i < size - 1; i++) {
-            stack1.push(stack2.top());
-            stack2.pop();
-        }
+
+        int v = stack2.top();
+        stack2.pop();
         return v;
     }
 
     int peek() {
-        int size = stack1.size();
-        for (int i = 0; i < size; i++) {
-            stack2.push(stack1.top());
-            stack1.pop();
+        if (stack2.empty()) {
+            int size = stack1.size();
+            for (int i = 0; i < size; i++) {
+                stack2.push(stack1.top());
+                stack1.pop();
+            }
         }
+
         int v = stack2.top();
-        for (int i = 0; i < size; i++) {
-            stack1.push(stack2.top());
-            stack2.pop();
-        }
         return v;
     }
 
     bool empty() {
-        return stack1.empty();
+        return stack1.empty() && stack2.empty();
     }
 };
 
