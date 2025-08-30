@@ -11,6 +11,16 @@ class MyQueue {
 private:
     stack<int> stack1;
     stack<int> stack2;
+
+    void move() {
+        if (stack2.empty()) {
+            while (!stack1.empty()) {
+                stack2.push(stack1.top());
+                stack1.pop();
+            }
+        }
+    }
+
 public:
     MyQueue() {
 
@@ -21,30 +31,15 @@ public:
     }
 
     int pop() {
-        if (stack2.empty()) {
-            int size = stack1.size();
-            for (int i = 0; i < size; i++) {
-                stack2.push(stack1.top());
-                stack1.pop();
-            }
-        }
-
+        move();
         int v = stack2.top();
         stack2.pop();
         return v;
     }
 
     int peek() {
-        if (stack2.empty()) {
-            int size = stack1.size();
-            for (int i = 0; i < size; i++) {
-                stack2.push(stack1.top());
-                stack1.pop();
-            }
-        }
-
-        int v = stack2.top();
-        return v;
+        move();
+        return stack2.top();
     }
 
     bool empty() {
