@@ -21,18 +21,41 @@ struct ListNode {
 
 class Solution {
 public:
-    bool isPalindrome(ListNode* head) {
-        vector<ListNode *> nodes;
-        while (head != nullptr) {
-            nodes.push_back(head);
+    bool isPalindrome(ListNode *head) {
+        if (head == nullptr || head->next == nullptr) {
+            return true;
+        }
+        int size = 0;
+        ListNode *curr = head;
+        while (curr != nullptr) {
+            curr = curr->next;
+            size++;
+        }
+
+        // if size is odd, curr == mid
+        // if size is even, curr == mid->next
+        curr = head;
+        for (int i = 0; i < size / 2; i++) {
+            curr = curr->next;
+        }
+        // reverse
+        ListNode *prev = nullptr;
+        while (curr != nullptr) {
+            ListNode *temp = curr->next;
+            curr->next = prev;
+            prev = curr;
+            curr = temp;
+        }
+        // compare
+        ListNode *tail = prev;
+        for (int i = 0; i < size / 2; i++) {
+            if (tail->val != head->val) {
+                return false;
+            }
+            tail = tail->next;
             head = head->next;
         }
 
-        for (int i = 0; i < nodes.size() / 2; i++) {
-            if (nodes[i]->val != nodes[nodes.size() - 1 - i]->val) {
-                return false;
-            }
-        }
         return true;
     }
 };
