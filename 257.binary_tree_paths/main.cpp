@@ -35,7 +35,7 @@ private:
         return oss.str();
     }
 
-    void preOrder(TreeNode* root,vector<string> &paths, vector<int> path) {
+    void preOrder(TreeNode* root,vector<string> &paths, vector<int> &path) {
         if (root == nullptr) {
             return;
         }
@@ -46,6 +46,7 @@ private:
         }
         preOrder(root->left, paths, path);
         preOrder(root->right, paths, path);
+        path.pop_back();
     }
 public:
     vector<string> binaryTreePaths(TreeNode* root) {
