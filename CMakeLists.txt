@@ -61,5 +61,6 @@ add_subdirectory(${PROJECT_SOURCE_DIR}/231.power_of_two)
 add_subdirectory(${PROJECT_SOURCE_DIR}/232.implement_queue_using_stacks)
 add_subdirectory(${PROJECT_SOURCE_DIR}/234.palindrome_linked_list)
 add_subdirectory(${PROJECT_SOURCE_DIR}/242.valid_anagram)
+add_subdirectory(${PROJECT_SOURCE_DIR}/257.binary_tree_paths)
 
 #add_executable(plotmax2507 main.cpp)
